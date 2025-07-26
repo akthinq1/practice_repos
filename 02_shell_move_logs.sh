@@ -15,6 +15,19 @@ fi
 
 mkdir -p $LOGS_FOLDER
 
+VALIDATE (){
+    if [ $1 == 0 ]
+    then
+        echo $2... is success | tee -a $LOG_FILE
+    else
+        echo $2... is failure | tee -a $LOG_FILE
+        exit 1
+}
+
 # dnf install nginx -y | tee -a $LOG_FILE
 
 dnf install nginx -y &>>$LOG_FILE
+VALIDATE $? "installing nginx"
+
+# argument one is checking exit status $1=$?
+# argument two in function is installing nginx $2=nginx
