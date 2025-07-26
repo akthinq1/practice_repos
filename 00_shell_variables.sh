@@ -16,3 +16,7 @@ echo $!
 
 echo "srcipt name"
 echo $0
+
+echo $@
+
+echo $*
