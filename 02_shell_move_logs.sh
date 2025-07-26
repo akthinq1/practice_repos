@@ -2,7 +2,7 @@
 
 USER=$(id -u)
 LOGS_FOLDER="/var/log/shell_logs"
-SCRIPT_NAME="$(echo $0 | cut -d "." f1)"
+SCRIPT_NAME="$(echo $0 | cut -d "." -f1)"
 LOG_FILE="LOGS_FOLDER/SCRIPT_NAME.log"
 
 if [ $USER != 0 ]
@@ -14,4 +14,6 @@ fi
 
 mkdir -p $LOGS_FOLDER
 
-dnf install nginx -y | tee -a $LOG_FILE
+# dnf install nginx -y | tee -a $LOG_FILE
+
+dnf install nginx -y &>>$LOG_FILE
