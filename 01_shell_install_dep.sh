@@ -1,20 +1,22 @@
 #!/bin/bash
 
+echo $0
+echo
 
-user=$(id-u)
+user=$(id -u)
 
-if [ $user -nq 0 ]
+if [ $user != 0 ]
 then 
     echo "error: please run the script with root user"
 else
     echo "script started executing"
 fi
 
-echo $0
 
-$!
+
+echo $!
 
 abcdddd
 
-$!
+echo $!
 # dnf install nginx -y
