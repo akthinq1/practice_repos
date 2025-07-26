@@ -12,11 +12,9 @@ else
     echo "script started executing"
 fi
 
-
-
-echo $!
+echo $?
 
 abcdddd
 
-echo $!
+echo $?
 # dnf install nginx -y
