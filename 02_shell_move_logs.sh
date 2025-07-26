@@ -22,6 +22,7 @@ VALIDATE (){
     else
         echo $2... is failure | tee -a $LOG_FILE
         exit 1
+    fi
 }
 
 # dnf install nginx -y | tee -a $LOG_FILE
